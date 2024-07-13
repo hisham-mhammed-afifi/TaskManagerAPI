@@ -3,7 +3,6 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using TaskManagerAPI.Models;
-using MyTask = TaskManagerAPI.Models.Task;
 
 namespace TaskManagerAPI.Data
 {
@@ -29,10 +28,10 @@ namespace TaskManagerAPI.Data
             context.TeamMembers.AddRange(teamMembers);
             context.SaveChanges();
 
-            var tasks = new MyTask[]
+            var tasks = new TaskManagerAPI.Models.Task[]
             {
-                new MyTask { Name = "Task 1", Description = "Description for Task 1", Status = "Pending", StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(7), MemberId = teamMembers[0].MemberId },
-                new MyTask { Name = "Task 2", Description = "Description for Task 2", Status = "In Progress", StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(14), MemberId = teamMembers[1].MemberId }
+                new TaskManagerAPI.Models.Task { Name = "Task 1", Description = "Description for Task 1", Status = "Pending", StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(7), MemberId = teamMembers[0].MemberId },
+                new TaskManagerAPI.Models.Task { Name = "Task 2", Description = "Description for Task 2", Status = "In Progress", StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(14), MemberId = teamMembers[1].MemberId }
             };
 
             context.Tasks.AddRange(tasks);

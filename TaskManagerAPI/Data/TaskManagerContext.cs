@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 using TaskManagerAPI.Models;
-using MyTask = TaskManagerAPI.Models.Task;
 
 namespace TaskManagerAPI.Data
 {
@@ -13,16 +10,16 @@ namespace TaskManagerAPI.Data
         {
         }
 
-        public DbSet<MyTask> Tasks { get; set; }
+        public DbSet<TaskManagerAPI.Models.Task> Tasks { get; set; }
         public DbSet<TeamMember> TeamMembers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<MyTask>()
+            modelBuilder.Entity<TaskManagerAPI.Models.Task>()
                 .Property(t => t.Name)
                 .IsRequired();
 
-            modelBuilder.Entity<MyTask>()
+            modelBuilder.Entity<TaskManagerAPI.Models.Task>()
                 .Property(t => t.Description)
                 .IsRequired();
 

@@ -40,11 +40,22 @@ namespace TaskManagerAPI.Controllers
         {
             var member = await _context.TeamMembers
                 .Where(m => m.MemberId == id)
+                .Include(m => m.Tasks) // Include tasks
                 .Select(m => new TeamMemberDTO
                 {
                     MemberId = m.MemberId,
                     Name = m.Name,
-                    Email = m.Email
+                    Email = m.Email,
+                    Tasks = m.Tasks.Select(t => new TaskDTO
+                    {
+                        TaskId = t.TaskId,
+                        Name = t.Name,
+                        Description = t.Description,
+                        Status = t.Status,
+                        StartDate = t.StartDate,
+                        EndDate = t.EndDate,
+                        MemberId = t.MemberId
+                    }).ToList()
                 })
                 .FirstOrDefaultAsync();
 
