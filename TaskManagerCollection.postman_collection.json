@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "02784c69-1c12-4fff-9103-f5b805af6101",
+		"name": "TaskManagerCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15906092"
+	},
+	"item": [
+		{
+			"name": "Get all tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/api/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get task by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/api/task/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"task",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Task 3\",\r\n    \"description\": \"Description for Task 3\",\r\n    \"status\": \"In Progress\",\r\n    \"startDate\": \"2024-07-13T19:12:02.6494416\",\r\n    \"endDate\": \"2024-07-27T19:12:02.6494427\",\r\n    \"memberId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5067/api/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskId\": 1,\r\n    \"name\": \"Task 1 Updated\",\r\n    \"description\": \"Description for Task 1 Updated\",\r\n    \"status\": \"In progress\",\r\n    \"startDate\": \"2024-07-13T19:12:02.6261965\",\r\n    \"endDate\": \"2024-07-20T19:12:02.6493455\",\r\n    \"memberId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5067/api/task/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"task",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/api/task/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"task",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all team members",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/api/teamMember",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"teamMember"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get member by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/api/teamMember/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"teamMember",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new member",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberId\": 2,\r\n    \"name\": \"Hesham Afifi\",\r\n    \"email\": \"hisham.mohammed@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5067/api/teamMember",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"teamMember"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update member",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberId\": 1,\r\n    \"name\": \"Updated name\",\r\n    \"email\": \"jane.smith.updated@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5067/api/teamMember/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"teamMember",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete member",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5067/api/teamMember/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5067",
+					"path": [
+						"api",
+						"teamMember",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
